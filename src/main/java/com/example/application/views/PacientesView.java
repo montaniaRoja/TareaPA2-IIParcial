@@ -44,7 +44,7 @@ public class PacientesView  extends Div implements PacientesViewModel, BeforeEnt
         add(getToolbar(), getContent()); 
             
     
-        controlador.consultarPacientes(); //ESTE ES PARA CONECTARSE A ORACLE
+        controlador.consultarPacientes(); //ESTE ES PARA traer los pacientes desde oracle
         
         closeEditor();
     }

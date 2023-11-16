@@ -4,7 +4,6 @@ package com.example.application.views;
 import com.example.aplicattion.controller.PacientesInteractor;
 import com.example.aplicattion.controller.PacientesInteractorImpl;
 import com.example.application.data.Paciente;
-import com.example.application.data.services.CrudPacientes;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;

@@ -6,7 +6,7 @@ public class Historial {
 	private String motivo_cita;
 	private String diagnostico;
 	private String proxima_cita;
-	private String identidad;
+	private String paciente_id;
 	
 	public Historial() {
 		
@@ -53,13 +53,14 @@ public class Historial {
 	}
 
 
-	public String getIdentidad() {
-		return identidad;
+	
+	public String getPaciente_id() {
+		return paciente_id;
 	}
 
 
-	public void setIdentidad(String identidad) {
-		this.identidad = identidad;
+	public void setPaciente_id(String paciente_id) {
+		this.paciente_id = paciente_id;
 	}
 
 

@@ -32,12 +32,12 @@ public class HistorialInteractorImpl implements HistorialInteractor {
 		}
 		
 	}
-
-	@Override
+	
 	public void crearHistorial(Historial historial) {
 		try {
-			this.modelo.crearHistorial(historial);
-			boolean respuesta=this.modelo.crearHistorial(historial);
+			this.modelo.salvarHistorial(historial);
+			System.out.println("historial salvado linea 40");
+			boolean respuesta=this.modelo.salvarHistorial(historial);
 			if(respuesta) {
 				this.vista.mostrarMensaje("Exito");
 			}
@@ -51,4 +51,7 @@ public class HistorialInteractorImpl implements HistorialInteractor {
 		
 	
 	}
+	
+
+	
 }

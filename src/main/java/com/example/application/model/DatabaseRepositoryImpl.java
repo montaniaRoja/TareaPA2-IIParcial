@@ -57,7 +57,7 @@ public class DatabaseRepositoryImpl {
 	}
 
 
-	public boolean crearHistorial(Historial historial) throws IOException {
+	public boolean salvarHistorial(Historial historial) throws IOException {
 		Call<ResponseBody> call=client.getDatabase().crearHistorial(historial);
 		Response<ResponseBody> response=call.execute();
 		return response.isSuccessful();

@@ -1,6 +1,5 @@
 package com.example.application;
 
-import com.example.application.data.services.Conexion;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.theme.Theme;
 import org.springframework.boot.SpringApplication;
@@ -22,7 +21,7 @@ public class Application implements AppShellConfigurator {
 	public static void main(String[] args) {
     	
     	
-    	System.out.println("conexion status "+Conexion.probarConexion());
+    	
         SpringApplication.run(Application.class, args);
     }
 

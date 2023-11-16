@@ -43,8 +43,7 @@ public class HistorialView  extends VerticalLayout implements HasUrlParameter<St
     
     public HistorialView() {
     	
-    	//String dni = paciente.getDni();
-    	//recuperarDni(null, null);
+    	
         addClassName("list-view"); 
         setSizeFull();
         configureGrid(); 
@@ -67,45 +66,23 @@ public class HistorialView  extends VerticalLayout implements HasUrlParameter<St
         removeClassName("editing");
 		
 	}
-    /*
-    private void addHistorial() { 
-        //grid.asSingleSelect().clear();
-        
-        form.setVisible(true);
-        editHistorial(new Historial());
-    }
-    */
-	private void setElementos(ArrayList arrayList) {
-		// TODO Auto-generated method stub
-		
-	}
+   
 	
 	
-	public void recuperarDni(BeforeEvent event,
-	        @OptionalParameter String parameter) {
-
-	    com.vaadin.flow.router.Location location = event.getLocation();
-	    QueryParameters queryParameters = location.getQueryParameters();
-
-	    java.util.Map<String, List<String>> parametersMap = queryParameters.getParameters();
-	    
-	    System.out.println(parametersMap);
-	}
-
 	private void configureForm() {
     	form = new HistorialForm(); 
         form.setWidth("25em");
-		// TODO Auto-generated method stub
+		
 		
 	}
    
 	private void configureGrid() {
         grid.addClassNames("historial-grid"); 
         grid.setSizeFull();
-        grid.setColumns("fecha_cita", "motivo_cita", "diagnostico","proxima_cita"); 
-        
+        grid.setColumns("paciente_id","fecha_cita", "motivo_cita", "diagnostico","proxima_cita"); 
         grid.getColumns().forEach(col -> col.setAutoWidth(true)); 
     }
+	
 	
 	public void editHistorial(Historial historial) { 
         if (historial == null) {
@@ -132,17 +109,7 @@ public class HistorialView  extends VerticalLayout implements HasUrlParameter<St
     
     
     
-    /*
-    @Override
-    public void setParameter(BeforeEvent event, String parameter) {
-    	String dni=form.dniPaciente.getValue().toString();
-         List<Historial> historial = new HistorialRepositorio(dni).consultaHistorial();
-        grid.setItems(historial);
-       form.dniPaciente.setValue(parameter);
-          
-    }
-    
-    */
+   
     
     @Override
 	public void mostrarHistorialEnGrid(List<Historial> items) {
@@ -167,10 +134,11 @@ public class HistorialView  extends VerticalLayout implements HasUrlParameter<St
 		this.elementos = elementos;
 	}
 	
+	
 	@Override
 	public void mostrarMensaje(String string) {
 		Notification.show(string);
-		// TODO Auto-generated method stub
+		
 		
 	}
 	
@@ -179,6 +147,7 @@ public class HistorialView  extends VerticalLayout implements HasUrlParameter<St
 		try {
     			 		
 	    	controlador.crearHistorial(historial);
+	    	System.out.println("linea 182 guardar historial");
 	    		
 	    	} catch (Exception ex) {
 	            

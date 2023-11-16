@@ -64,10 +64,16 @@ private Object crearHistorial() {
 	historial.setDiagnostico(diagnos.getValue());
 	LocalDate fechaSeleccionada = dateNext.getValue();
 	historial.setProxima_cita(fechaSeleccionada.toString());
-	historial.setIdentidad(dniPaciente.getValue());
+	historial.setPaciente_id(dniPaciente.getValue());
 	
 	HistorialView.nuevoHistorial(historial);
 	
+	this.dniPaciente.clear();
+	this.dateDate.clear();
+	this.dateNext.clear();
+	this.diagnos.clear();
+	this.motivoDate.clear();
+	 System.out.println("Historial creado exitosamente.");
 	
 	return null;
 }
